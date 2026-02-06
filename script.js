@@ -40,7 +40,7 @@ function startFirework() {
     const x = window.innerWidth / 2;
     const y = window.innerHeight / 2;
 
-    for (let i = 0; i < 600; i++) {
+    for (let i = 0; i < 450; i++) {
         const rose = document.createElement("img");
         rose.src = "rose.png";
         rose.className = "rose";
@@ -123,3 +123,4 @@ function showPhoto(num) {
         currentPhoto = newPhoto;
     }
 }
+
