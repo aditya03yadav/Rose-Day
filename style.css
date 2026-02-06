@@ -1,72 +1,81 @@
+/* ===== GLOBAL ===== */
 html, body {
-    width: 100%;
-    height: auto;        /* ❗ fixed height hatao */
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 body {
-    background-image: url("background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+    background: url("background.jpg") center/cover no-repeat;
     font-family: 'Great Vibes', cursive;
-
-    overflow-y: auto;    /* ✅ scroll enable */
     overflow-x: hidden;
 }
 
-/* container ko transparent rakho */
+/* ===== CONTAINER ===== */
 .container {
     text-align: center;
-    color: black;
-    background: transparent;
-
-    max-width: 100%;
-    padding-bottom: 120px; /* 👈 future photos ke liye space */
+    padding-bottom: 150px;
 }
 
-h1 {
-    margin-bottom: 30px;
+/* ===== TITLE ===== */
+.title {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 56px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: all 1.8s ease;
+    z-index: 999;
+}
+
+.title.shifted {
+    top: 20px;
+    left: 20px;
+    transform: none;
+    font-size: 30px;
+}
+
+.title-rose {
+    width: 38px;
+}
+
+/* ===== BOUQUET ===== */
+.bouquet {
+    display: none;
+    margin-top: 120px;
 }
 
 .bouquet img {
-    width: 160px;
+    width: 150px;
     cursor: pointer;
     animation: pulse 1.5s infinite;
 }
 
-
 .tap-text {
-    font-size: 14px;
     margin-top: 8px;
-    opacity: 0.8;
+    font-size: 14px;
 }
 
+/* ===== PULSE ===== */
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
-/* Flying roses */
+/* ===== FLYING ROSE ===== */
 .rose {
     position: absolute;
-    font-size: 32px;
+    width: 35px;
     left: 50%;
     top: 50%;
-    pointer-events: none;
     transform: translate(-50%, -50%);
-    animation: fly 0.50s ease-out forwards;
+    pointer-events: none;
+    animation: fly 2.2s ease-out forwards;
 }
-
 
 @keyframes fly {
     to {
@@ -75,197 +84,74 @@ h1 {
     }
 }
 
-/* ===== TITLE ROSE IMAGE ===== */
-.title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.title-rose {
-    width: 40px;
-    height: auto;
-}
-
-/* ===== FLYING ROSE PNG ===== */
-.rose {
-    position: absolute;
-    width: 35px;
-    height: auto;
-    left: 50%;
-    top: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    animation: fly 2.2s ease-out forwards;
-}
-.title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 64px;
-    font-weight: normal;
-    color: black;
-}
-/* Initial center title */
-.title {
-    transition: all 1.8s ease; /* slow motion */
-    position: relative;
-}
-
-/* After animation: top-left fixed */
-.title.shifted {
-    position: fixed;      /* 🔥 MOST IMPORTANT LINE */
-    top: 20px;
-    left: 20px;
-
-    font-size: 32px;
-    z-index: 9999;        /* always above content */
-}
-
+/* ===== FINAL TEXT ===== */
 .final-text {
     display: none;
     max-width: 90%;
-    margin: 140px auto 0;   /* 👈 yahin change */
-    font-size: clamp(22px, 5vw, 36px);
+    margin: 140px auto 0;
+    font-size: 26px;
     line-height: 1.6;
     text-align: left;
-    color: black;
     opacity: 0;
     transition: opacity 1s ease;
-    font-family: "Calisto MT", "Times New Roman", serif;
-
+    font-family: "Calisto MT", serif;
 }
 
-/* Default title (center initially) */
-.title {
-    transition: all 1.8s ease;
-    position: fixed;        /* 🔥 always fixed */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-}
-
-/* After animation: top-left */
-.title.shifted {
-    top: 20px;
-    left: 20px;
-    transform: none;
-    font-size: 32px;
-}
-
-/* Scrollable content */
-.container {
-    margin-top: 120px;   /* title ke niche space */
-    padding-bottom: 150px;
-}
-
-.gallery {
-    margin: 40px auto;
-    max-width: 95%;
-    display: none;              /* 👈 pehle hide */
-    grid-template-columns: 1fr; /* 👈 mobile: 1 photo per row */
-    gap: 20px;
-}
-
-
-.gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    object-fit: cover;
-    box-shadow: 0 4px rgba(0,0,0,0.2);
-}
-
-/* Buttons container */
+/* ===== GALLERY ===== */
 .gallery-section {
-    text-align: center;
-    margin: 40px auto;
+    display: none;
+    margin-top: 30px;
 }
 
-/* Common button style */
 .gallery-btn {
-    background: rgba(255, 200, 200, 0.6);
-    border: none;
     padding: 12px 26px;
-    margin: 10px;
     border-radius: 30px;
+    border: none;
+    background: rgba(255,200,200,0.7);
     font-size: 18px;
     cursor: pointer;
-    font-family: "Calisto MT", serif;
-    backdrop-filter: blur(4px);
+    margin: 10px;
 }
 
-/* Hover */
-.gallery-btn:hover {
-    background: rgba(255, 180, 180, 0.8);
-}
-
-/* Hide photo buttons initially */
 .photo-buttons {
     display: none;
 }
 
-/* Gallery photos */
 .gallery {
     display: none;
-    margin: 30px auto;
-    max-width: 95%;
+    margin-top: 30px;
 }
 
 .gallery img {
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 14px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-}
-
-/* Photo arrival animation */
-.gallery img.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Gallery section hidden initially */
-.gallery-section {
     display: none;
-    text-align: center;
-    margin: 40px auto;
-}
-
-/* Photo buttons hidden initially */
-.photo-buttons {
-    display: none;
-}
-
-/* Gallery photo container */
-.gallery {
-    display: block;
-    margin: 30px auto;
-    max-width: 95%;
-    text-align: center;
-}
-
-/* All photos default hidden */
-.gallery img {
-    display: none;
-    width: 100%;
+    width: 90%;
     max-width: 600px;
-    margin: 0 auto;
     border-radius: 14px;
-
+    margin: 0 auto 20px;
     opacity: 0;
     transition: opacity 0.8s ease;
 }
 
-/* Fade in */
 .gallery img.show {
     display: block;
     opacity: 1;
 }
 
-/* Fade out */
 .gallery img.hide {
     opacity: 0;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+    .title {
+        font-size: 26px;
+    }
+
+    .title.shifted {
+        font-size: 22px;
+    }
+
+    .bouquet img {
+        width: 130px;
+    }
 }
