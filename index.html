@@ -4,53 +4,49 @@
     <meta charset="UTF-8">
     <title>Happy Rose Day Bebyyy ❤️</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
-    <!-- CSS file link -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h2 id="title" class="title">
-    Happy Rose Day Bebyyy
-    <img src="rose.png" class="title-rose" alt="rose">
-    </h2>
-        <!-- Rose Bouquet -->
-       <div class="bouquet" id="bouquet">
-    <img src="bouquet.png" alt="Rose Bouquet">
-    <div class="tap-text"><h1>Tap the bouquet</h1></div>
-</div>
+<div class="container">
 
-    <p id="finalText" class="final-text"></p>
-    <!-- Gallery Open Button -->
-<div id="gallerySection" class="gallery-section">
-    <button id="openGalleryBtn" class="gallery-btn">
-        Open Gallery ❤️
-    </button>
+    <!-- TITLE -->
+    <h1 id="title" class="title">
+        Happy Rose Day Bebyyy
+        <img src="rose.png" class="title-rose" alt="rose">
+    </h1>
 
-    <div id="photoButtons" class="photo-buttons">
-        <button class="gallery-btn" onclick="showPhoto(1)">Photo 1</button>
-        <button class="gallery-btn" onclick="showPhoto(2)">Photo 2</button>
-        <button class="gallery-btn" onclick="showPhoto(3)">Photo 3</button>
+    <!-- BOUQUET -->
+    <div class="bouquet" id="bouquet">
+        <img src="bouquet.png" alt="Rose Bouquet">
+        <div class="tap-text">Tap the bouquet</div>
     </div>
+
+    <!-- FINAL TEXT -->
+    <p id="finalText" class="final-text"></p>
+
+    <!-- GALLERY BUTTON -->
+    <div id="gallerySection" class="gallery-section">
+        <button id="openGalleryBtn" class="gallery-btn">Open Gallery ❤️</button>
+
+        <div id="photoButtons" class="photo-buttons">
+            <button class="gallery-btn" onclick="showPhoto(1)">Photo 1</button>
+            <button class="gallery-btn" onclick="showPhoto(2)">Photo 2</button>
+            <button class="gallery-btn" onclick="showPhoto(3)">Photo 3</button>
+        </div>
+    </div>
+
+    <!-- PHOTOS -->
+    <div class="gallery">
+        <img id="photo1" src="images/photo1.jpg">
+        <img id="photo2" src="images/photo2.jpg">
+        <img id="photo3" src="images/photo3.jpg">
+    </div>
+
 </div>
 
-<!-- Photos -->
-<div class="gallery">
-    <img id="photo1" src="images/photo1.jpg">
-    <img id="photo2" src="images/photo2.jpg">
-    <img id="photo3" src="images/photo3.jpg">
-</div>
-
-<div class="gallery">
-    <img src="images/photo1.jpg" alt="memory 1">
-    <img src="images/photo2.jpg" alt="memory 2">
-    <img src="images/photo3.jpg" alt="memory 3">
-</div>
-
-</div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
