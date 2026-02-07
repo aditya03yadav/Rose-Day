@@ -6,7 +6,8 @@ html, body {
 }
 
 body {
-    background: url("background.jpg") center/cover no-repeat;
+    
+    background: url("bg-new.jpg") center/cover no-repeat;
     font-family: 'Great Vibes', cursive;
     overflow-x: hidden;
 }
@@ -155,3 +156,4 @@ body {
         width: 130px;
     }
 }
+
